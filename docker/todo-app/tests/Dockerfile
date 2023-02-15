@@ -1,4 +1,5 @@
-FROM mjgargani/puppeteer:trybe1.0 as todotests
+FROM mjgargani/puppeteer:trybe1.0
+WORKDIR /todotest
 ADD node_modules.tar.gz .
-COPY . todotests
+COPY . /todotest
 ENTRYPOINT [ "npm", "test" ]

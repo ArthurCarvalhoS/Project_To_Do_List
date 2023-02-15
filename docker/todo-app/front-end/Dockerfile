@@ -1,5 +1,6 @@
-FROM node:14 as todofrontend
+FROM node:14
+WORKDIR /todoapp
 EXPOSE 3000
 ADD node_modules.tar.gz .
-COPY . todofrontend
+COPY . /todoapp
 ENTRYPOINT [ "npm", "start" ]
