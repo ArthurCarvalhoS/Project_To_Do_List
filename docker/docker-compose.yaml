@@ -1,7 +1,7 @@
 version: "3"
 services:
   todofront:
-    build: todofrontend
+    image: todofrontend
     restart: on-failure
     ports:
       - 3000:3000
@@ -12,14 +12,14 @@ services:
     networks:
       - rede-virtual
   todoback:
-    build: todobackend
+    image: todobackend
     restart: on-failure
     ports:
       - 3001:3001
     networks:
       - rede-virtual
   todotests:
-    build: todotests
+    image: todotests
     restart: on-failure
     environment:
       - FRONT_HOST=todofront
